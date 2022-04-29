@@ -1,0 +1,21 @@
+.card {
+    border: none !important;
+
+}
+
+.card:hover .maniaportal-icons-container {
+    background-color: #DB2D2E;
+    color: white;
+}
+
+.maniaportal-icons {
+    font-size: 2.5em;
+}
+
+.maniaportal-icons-container {
+    background-color: #e9e7e7;
+    border-radius: 50%;
+    width: 40%;
+    height: 34%;
+    transition: 0.5s;
+}
