@@ -1,12 +1,12 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 const InventoryItem = ({ inventoryItem }) => {
     const { img, itemName, category, description, quantity, supplierName, _id, price } = inventoryItem;
     // console.log(inventoryItem);
-    const navigate = useNavigate();
-    const handleNavigate = (id) => {
-        navigate(`/inventory/${id}`)
-    };
+    // const navigate = useNavigate();
+    // // const handleNavigate = (id) => {
+    // //     navigate(`/inventory/${id}`)
+    // // };
     return (
         <div className="row my-5 align-items-center">
             <div className="col-md-4">

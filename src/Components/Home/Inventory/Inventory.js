@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './Inventory.css';
 import InventoryItem from './InventoryItem/InventoryItem';
 const Inventory = () => {
@@ -23,6 +24,9 @@ const Inventory = () => {
                     inventoryItems.map(inventoryItem => <InventoryItem key={inventoryItem._id} inventoryItem={inventoryItem}></InventoryItem>)
                 }
             </div>
+            <Link to="/manage-inventories">
+                <button className="btn btn-warning">Manage Inventory</button>
+            </Link>
 
         </div>
     );

@@ -40,11 +40,51 @@
         "supplierName": "Jennifer Baird"
     },
     {
+        "img": "https://images.unsplash.com/photo-1610900445187-27d489d063c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
+        "category": "laptop",
+        "description": "Windows 11 HomeIntel® Core™ i5-12500H (up to 4.5 GHz, 18 MB L3 cache, 12 cores, 16 threads) + NVIDIA® GeForce® GTX 1650 Laptop GPU (4 GB)8 GB DDR5-4800",
+        "itemName": "HP Notebook-14",
+        "quantity": "21",
+        "supplierName": "Maira Morton"
+    },
+    {
+        "img": "https://images.unsplash.com/photo-1589819008621-258acc915abf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
+        "category": "laptop",
+        "description": "Windows 11 HomeIntel® Core™ i5-12500H (up to 4.5 GHz, 18 MB L3 cache, 12 cores, 16 threads) + NVIDIA® GeForce® GTX 1650 Laptop GPU (4 GB)8 GB DDR5-4800",
+        "itemName": "HP 15-ayTU",
+        "quantity": "21",
+        "supplierName": "Steve Rogers"
+    },
+    {
         "img": "https://images.unsplash.com/photo-1493020258366-be3ead1b3027?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
         "category": "laptop",
         "description": "Windows 11 HomeIntel® Core™ i5-12500H (up to 4.5 GHz, 18 MB L3 cache, 12 cores, 16 threads) + NVIDIA® GeForce® GTX 1650 Laptop GPU (4 GB)8 GB DDR5-4800",
-        "itemName": "Omen 14-bw03108",
+        "itemName": "Lenovo Casillas",
         "quantity": "21",
-        "supplierName": "Glenna Morton"
+        "supplierName": "Morientes Marka"
+    },
+    {
+        "img": "https://images.unsplash.com/photo-1513918596785-a2fcc5a5d302?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
+        "category": "laptop",
+        "description": "Windows 11 HomeIntel® Core™ i5-12500H (up to 4.5 GHz, 18 MB L3 cache, 12 cores, 16 threads) + NVIDIA® GeForce® GTX 1650 Laptop GPU (4 GB)8 GB DDR5-4800",
+        "itemName": "ASUS 15-ay",
+        "quantity": "21",
+        "supplierName": "Peter Parker"
+    },
+    {
+        "img": "https://images.unsplash.com/photo-1493119508027-2b584f234d6c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
+        "category": "laptop",
+        "description": "Windows 11 HomeIntel® Core™ i5-12500H (up to 4.5 GHz, 18 MB L3 cache, 12 cores, 16 threads) + NVIDIA® GeForce® GTX 1650 Laptop GPU (4 GB)8 GB DDR5-4800",
+        "itemName": "Dell 15-36tu",
+        "quantity": "21",
+        "supplierName": "Gwen Stassy"
+    },
+    {
+        "img": "https://images.unsplash.com/photo-1550234646-8d03f6e034fb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
+        "category": "laptop",
+        "description": "Windows 11 HomeIntel® Core™ i5-12500H (up to 4.5 GHz, 18 MB L3 cache, 12 cores, 16 threads) + NVIDIA® GeForce® GTX 1650 Laptop GPU (4 GB)8 GB DDR5-4800",
+        "itemName": "Dell aspirion Omega",
+        "quantity": "21",
+        "supplierName": "Glenna Java"
     }
 ]

@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Form } from 'react-bootstrap';
+import { Link, useParams } from 'react-router-dom';
 import './UpdateItem.css';
 const UpdateItem = () => {
     const { id } = useParams();
@@ -11,19 +12,6 @@ const UpdateItem = () => {
     // useEffect(() => {
     //     setItemQuantity(quantity - 1)
     // }, [quantity]);
-
-
-    useEffect(() => {
-        async function getSingleItem() {
-            try {
-                const { data } = await axios.get(`http://localhost:5000/inventory/${id}`);
-                setSingleItem(data);
-            } catch (error) {
-                console.error(error);
-            }
-        };
-        getSingleItem();
-    }, [id]);
 
     // handle update button
     const handleQuantityUpdate = (id) => {
@@ -46,6 +34,19 @@ const UpdateItem = () => {
         console.log(id);
 
     };
+    useEffect(() => {
+        async function getSingleItem() {
+            try {
+                const { data } = await axios.get(`http://localhost:5000/inventory/${id}`);
+                setSingleItem(data);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+        getSingleItem();
+    }, [id, quantity]);
+
+
 
 
 
@@ -65,8 +66,16 @@ const UpdateItem = () => {
                             <p className="text-muted">{description}</p>
                             <button onClick={() => handleQuantityUpdate(id)} className="btn btn-warning px-3">Delivered</button>
                         </div>
+                        <form className="w-25 mt-4">
+                            <Form.Control type="number" placeholder="Restock" />
+                            <button className="btn btn-warning my-2">Restock Item</button>
+                        </form>
+                        <Link to="/manage-inventories">
+                            <button className="btn btn-warning">Manage Inventory</button>
+                        </Link>
                     </div>
                 </div>
+
             </div>
         </div>
     );
