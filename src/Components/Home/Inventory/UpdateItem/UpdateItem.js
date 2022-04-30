@@ -44,7 +44,7 @@ const UpdateItem = () => {
             }
         };
         getSingleItem();
-    }, [id, quantity]);
+    });
 
 
 
