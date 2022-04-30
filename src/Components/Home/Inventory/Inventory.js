@@ -7,7 +7,7 @@ const Inventory = () => {
     useEffect(() => {
         async function getItems() {
             try {
-                const { data } = await axios.get('http://localhost:5000/items');
+                const { data } = await axios.get('http://localhost:5000/inventory');
                 setInventoryItems(data);
             } catch (error) {
                 console.error(error);

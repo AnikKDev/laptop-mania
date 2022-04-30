@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 const InventoryItem = ({ inventoryItem }) => {
-    const { img, itemName, category, description, quantity, supplierName, _id } = inventoryItem;
+    const { img, itemName, category, description, quantity, supplierName, _id, price } = inventoryItem;
     // console.log(inventoryItem);
     const navigate = useNavigate();
     const handleNavigate = (id) => {
@@ -17,6 +17,7 @@ const InventoryItem = ({ inventoryItem }) => {
                     <h5 className="card-title">{itemName}</h5>
                     <h6>Supplier Name: {supplierName}</h6>
                     <h6>Quantity: {quantity}</h6>
+                    <h6>Single Price: {price}</h6>
                     <p className="card-text">{description}</p>
                     <p className="card-text"><small className="text-muted">Category: {category}</small></p>
                     <Link to={`/inventory/${_id}`}>
