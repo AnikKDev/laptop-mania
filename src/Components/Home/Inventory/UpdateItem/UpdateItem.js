@@ -16,6 +16,9 @@ const UpdateItem = () => {
     // handle update button
     const handleQuantityUpdate = (id) => {
         const newQuantity = parseInt(quantity - 1);
+        if (newQuantity < 0) {
+            return
+        }
 
         fetch(`http://localhost:5000/inventory/${id}`, {
             method: 'PUT',
@@ -64,7 +67,8 @@ const UpdateItem = () => {
                             <h5>Single Price: {price}</h5>
                             <h5>Quantity: {quantity}</h5>
                             <p className="text-muted">{description}</p>
-                            <button onClick={() => handleQuantityUpdate(id)} className="btn btn-warning px-3">Delivered</button>
+                            {quantity === 0 ? <button disabled className="btn btn-warning my-2">Sold</button> : <button onClick={() => handleQuantityUpdate(id)} className="btn btn-warning px-3">Delivered</button>}
+
                         </div>
                         <form className="w-25 mt-4">
                             <Form.Control type="number" placeholder="Restock" />

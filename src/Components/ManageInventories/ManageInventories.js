@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import './ManageInventories.css';
 const ManageInventories = () => {
     const [allItems, setAllItems] = useState([]);
@@ -67,6 +68,7 @@ const ManageInventories = () => {
                     </tbody>
                 </Table>
             </div>
+            <Link to="/add-item"><button className="btn btn-warning">Add New Item</button></Link>
         </div>
     );
 };
