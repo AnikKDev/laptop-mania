@@ -38,6 +38,9 @@ const UpdateItem = () => {
             console.log(id);
         } else {
             console.log('updated quantity (increased)');
+            if (!restock) {
+                return
+            }
             newQuantity = parseInt(parseInt(quantity) + parseInt(restock));
             fetch(`http://localhost:5000/inventory/${id}`, {
                 method: 'PUT',
@@ -94,7 +97,7 @@ const UpdateItem = () => {
 
                         </div>
                         <div className="w-25 mt-4" >
-                            <Form.Control onChange={event => setRestock(event?.target?.value)} type="number" placeholder="Restock" />
+                            <Form.Control required onChange={event => setRestock(event?.target?.value)} type="number" placeholder="Restock" />
                             <button onClick={() => handleQuantityUpdate(id, false)} className="btn btn-warning my-2">Restock Item</button>
                         </div>
                         <Link to="/manage-inventories">
