@@ -3,6 +3,7 @@ import { Button, Form } from 'react-bootstrap';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import toast from 'react-hot-toast';
 import './SignUp.css';
 const SignUp = () => {
     const navigate = useNavigate();
@@ -21,7 +22,7 @@ const SignUp = () => {
         };
     }, [user, navigate]);
     if (error) {
-        console.log(error.message)
+        toast.error(error.message)
     }
 
     // handle signup
@@ -85,18 +86,18 @@ const SignUp = () => {
                 <Form noValidate validated={validated} onSubmit={handleSignup}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Email address</Form.Label>
-                        <Form.Control onChange={handleEmailChange} type="email" placeholder="Enter email" />
+                        <Form.Control onChange={handleEmailChange} type="email" placeholder="Enter email" required />
                         {errors?.email && <p className="text-danger">{errors.email}</p>}
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                         <Form.Label>Password</Form.Label>
-                        <Form.Control onChange={handlePasswordChange} type="password" placeholder="Password" />
+                        <Form.Control onChange={handlePasswordChange} type="password" placeholder="Password" required />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicConfirmPassword">
                         <Form.Label>Confirm Password</Form.Label>
-                        <Form.Control onChange={handleConfirmPasswordChange} type="password" placeholder="Confirm Password" />
+                        <Form.Control onChange={handleConfirmPasswordChange} type="password" placeholder="Confirm Password" required />
                         {errors?.password && <p className="text-danger">{errors.password}</p>}
                     </Form.Group>
 

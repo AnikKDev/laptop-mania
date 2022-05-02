@@ -5,6 +5,7 @@ import { useSignInWithGoogle, useSignInWithEmailAndPassword, useSendPasswordRese
 import auth from '../../firebase.init';
 import './Login.css';
 import LoadingSpinner from '../Loadingspinner/LoadingSpinner';
+import toast from 'react-hot-toast';
 const Login = () => {
     const location = useLocation();
     const navigate = useNavigate();
@@ -56,7 +57,13 @@ const Login = () => {
     );
     // handle password reset mail
     const handleResetPass = async () => {
-        await sendPasswordResetEmail(userInfo.email);
+        if (userInfo.email) {
+            await sendPasswordResetEmail(userInfo.email);
+            toast.success('Reset email has been sent.')
+        }
+        else {
+            toast.error('Please try again')
+        }
     }
 
 

@@ -11,6 +11,7 @@ import ManageInventories from './Components/ManageInventories/ManageInventories'
 import AddItem from './Components/AddItem/AddItem';
 import SignUp from './Components/SignUp/SignUp';
 import RequireAuth from './Components/RequireAuth/RequireAuth';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
@@ -31,6 +32,8 @@ function App() {
         <Route path="/manage-inventories" element={<ManageInventories></ManageInventories>}></Route>
         <Route path="/add-item" element={<AddItem></AddItem>}></Route>
       </Routes>
+
+      <Toaster />
     </div>
   );
 }
