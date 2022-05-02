@@ -1,28 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import auth from '../../firebase.init';
-import './Login.css';
-const Login = () => {
+import './SignUp.css';
+const SignUp = () => {
     const navigate = useNavigate();
-
-    // handle google sign in
-    const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
-    useEffect(() => {
-        if (user) {
-            console.log(user.user);
-            navigate('/home')
-        };
-    }, [navigate, user])
-
-    const handleGoogleSignin = () => {
-
-
-        signInWithGoogle();
-    };
-
-
     return (
         <div>
             <div className="w-50 mx-auto">
@@ -41,16 +22,14 @@ const Login = () => {
                     </Form.Group>
 
                     <Button variant="primary" type="submit" className="w-100">
-                        Login
+                        Sign Up
                     </Button>
+
                 </Form>
-                <Button onClick={handleGoogleSignin} variant="primary" type="submit" className="w-100 my-2">
-                    Sign in with Google
-                </Button>
-                <p>Don't have an account? <button onClick={() => navigate('/signup')} className="btn btn-link">Create an account</button></p>
+                <p>Already have an account? <button onClick={() => navigate('/login')} className="btn btn-link">Login</button></p>
             </div>
         </div>
     );
 };
 
-export default Login;
+export default SignUp;
