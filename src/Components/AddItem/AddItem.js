@@ -2,8 +2,11 @@ import React from 'react';
 import { Form } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
 import axios from 'axios';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 const AddItem = () => {
-
+    // get the user if logged in
+    const [user, loading, error] = useAuthState(auth);
     // handle add item button
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
@@ -23,6 +26,7 @@ const AddItem = () => {
             </h2>
             <div className="container">
                 <form className="w-50 mx-auto d-flex flex-column" onSubmit={handleSubmit(onSubmit)}>
+                    <input className="my-3" value={user?.email} readOnly placeholder='Email' {...register("email")} />
                     <input className="my-3" placeholder='Item Name' {...register("itemName", { required: true, maxLength: 20 })} />
                     <input className="my-3" placeholder='Supplier Name' {...register("supplierName", { required: true })} />
                     <input className="my-3" placeholder='Price Per Item' type="number" {...register("price", { required: true })} />
