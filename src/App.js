@@ -10,6 +10,7 @@ import UpdateItem from './Components/Home/Inventory/UpdateItem/UpdateItem';
 import ManageInventories from './Components/ManageInventories/ManageInventories';
 import AddItem from './Components/AddItem/AddItem';
 import SignUp from './Components/SignUp/SignUp';
+import RequireAuth from './Components/RequireAuth/RequireAuth';
 
 function App() {
   return (
@@ -22,7 +23,11 @@ function App() {
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/signup" element={<SignUp></SignUp>}></Route>
-        <Route path="/inventory/:id" element={<UpdateItem></UpdateItem>}></Route>
+        <Route path="/inventory/:id" element={
+          <RequireAuth>
+            <UpdateItem></UpdateItem>
+          </RequireAuth>
+        }></Route>
         <Route path="/manage-inventories" element={<ManageInventories></ManageInventories>}></Route>
         <Route path="/add-item" element={<AddItem></AddItem>}></Route>
       </Routes>

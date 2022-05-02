@@ -1,20 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
-import { useSignInWithGoogle, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { useSignInWithGoogle, useSignInWithEmailAndPassword, useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import './Login.css';
+import LoadingSpinner from '../Loadingspinner/LoadingSpinner';
 const Login = () => {
+    const location = useLocation();
     const navigate = useNavigate();
-
+    // let the user go where he came from if he logged in
+    const from = location.state?.from?.pathname || "/";
     // handle google sign in
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
     useEffect(() => {
         if (googleUser) {
             console.log(googleUser.user);
-            navigate('/home')
+            navigate(from, { replace: true });
         };
-    }, [navigate, googleUser]);
+    }, [navigate, googleUser, from]);
+    if (googleLoading) {
+        <LoadingSpinner></LoadingSpinner>
+    };
 
     // handle email sign in
     const [
@@ -26,10 +32,12 @@ const Login = () => {
 
     useEffect(() => {
         if (emailUser) {
-            navigate('/')
+            navigate(from, { replace: true });
         }
-    }, [emailUser, navigate]);
-
+    }, [emailUser, navigate, from]);
+    if (emailLoading) {
+        <LoadingSpinner></LoadingSpinner>
+    };
     // get user infos
     const [userInfo, setUserInfo] = useState({
         email: "",
@@ -41,6 +49,15 @@ const Login = () => {
         password: "",
         others: ""
     });
+
+    // send password reset email
+    const [sendPasswordResetEmail, sending, error] = useSendPasswordResetEmail(
+        auth
+    );
+    // handle password reset mail
+    const handleResetPass = async () => {
+        await sendPasswordResetEmail(userInfo.email);
+    }
 
 
     // get email
@@ -67,7 +84,7 @@ const Login = () => {
         e.preventDefault();
         signInWithEmailAndPassword(userInfo.email, userInfo.password);
     };
-
+    // handle google sign in
     const handleGoogleSignin = () => {
         signInWithGoogle();
     };
@@ -95,6 +112,7 @@ const Login = () => {
                 <Button onClick={handleGoogleSignin} variant="primary" type="submit" className="w-100 my-2">
                     Sign in with Google
                 </Button>
+                <button onClick={handleResetPass} className="btn btn-link">Forgot password?</button>
                 <p>Don't have an account? <button onClick={() => navigate('/signup')} className="btn btn-link">Create an account</button></p>
             </div>
         </div>
