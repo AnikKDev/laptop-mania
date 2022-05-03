@@ -90,9 +90,12 @@ const Login = () => {
     // handle login
     const handleLogin = async e => {
         e.preventDefault();
+        const email = userInfo.email;
+        // console.log(email);
         await signInWithEmailAndPassword(userInfo.email, userInfo.password);
-        const { data } = await axios.post('http://localhost:5000/token', userInfo.email);
-        localStorage.setItem('accessToken', data);
+        const { data } = await axios.post('http://localhost:5000/token', { email });
+        // console.log(data);
+        localStorage.setItem('accessToken', data.token);
         navigate(from, { replace: true });
     };
     // handle google sign in
