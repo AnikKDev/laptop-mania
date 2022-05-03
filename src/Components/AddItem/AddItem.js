@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import axios from 'axios';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import toast from 'react-hot-toast';
 const AddItem = () => {
     // get the user if logged in
     const [user, loading, error] = useAuthState(auth);
@@ -13,7 +14,11 @@ const AddItem = () => {
         console.log(data);
         axios.post('http://localhost:5000/manage-inventories', data)
             .then(function (response) {
-                console.log(response);
+                const { data } = response;
+                if (data.insertedId) {
+                    console.log(data);
+                    toast.success('Successfully added')
+                }
             })
             .catch(function (error) {
                 console.log(error);

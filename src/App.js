@@ -12,6 +12,7 @@ import AddItem from './Components/AddItem/AddItem';
 import SignUp from './Components/SignUp/SignUp';
 import RequireAuth from './Components/RequireAuth/RequireAuth';
 import { Toaster } from 'react-hot-toast';
+import MyItems from './Components/MyItems/MyItems';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/signup" element={<SignUp></SignUp>}></Route>
+        <Route path="/my-items" element={<MyItems></MyItems>}></Route>
         <Route path="/inventory/:id" element={
           <RequireAuth>
             <UpdateItem></UpdateItem>

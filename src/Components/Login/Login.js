@@ -6,6 +6,7 @@ import auth from '../../firebase.init';
 import './Login.css';
 import LoadingSpinner from '../Loadingspinner/LoadingSpinner';
 import toast from 'react-hot-toast';
+import axios from 'axios';
 const Login = () => {
     const location = useLocation();
     const navigate = useNavigate();
@@ -15,7 +16,7 @@ const Login = () => {
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
     useEffect(() => {
         if (googleUser) {
-            console.log(googleUser.user);
+            // console.log(googleUser.user);
             navigate(from, { replace: true });
         };
     }, [navigate, googleUser, from]);
@@ -33,7 +34,7 @@ const Login = () => {
 
     useEffect(() => {
         if (emailUser) {
-            navigate(from, { replace: true });
+            // navigate(from, { replace: true });
         }
     }, [emailUser, navigate, from]);
     if (emailLoading) {
@@ -87,9 +88,12 @@ const Login = () => {
     };
 
     // handle login
-    const handleLogin = e => {
+    const handleLogin = async e => {
         e.preventDefault();
-        signInWithEmailAndPassword(userInfo.email, userInfo.password);
+        await signInWithEmailAndPassword(userInfo.email, userInfo.password);
+        const { data } = await axios.post('http://localhost:5000/token', userInfo.email);
+        localStorage.setItem('accessToken', data);
+        navigate(from, { replace: true });
     };
     // handle google sign in
     const handleGoogleSignin = () => {

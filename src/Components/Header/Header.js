@@ -21,6 +21,7 @@ const Header = () => {
                         <Nav.Link as={Link} to="/home">Home</Nav.Link>
                         <Nav.Link as={Link} to="/about">About</Nav.Link>
                         <Nav.Link as={Link} to="/blogs">Blogs</Nav.Link>
+                        <Nav.Link as={Link} to="/my-items">My Items</Nav.Link>
                         {user ? <button onClick={logout} className="btn btn-danger">Logout</button> : <Nav.Link as={Link} to="/login">Login</Nav.Link>}
                     </Nav>
                 </Navbar.Collapse>
