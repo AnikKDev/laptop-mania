@@ -7,11 +7,12 @@ import { BsSave } from 'react-icons/bs';
 import './ManiaPortal.css';
 const ManiaPortal = () => {
     return (
-        <div>
+        <div className="mt-5">
             <div className="maniaportal-intro text-center">
                 <p className="text-muted">Welcome to our website</p>
-                <h2>Mania Portal</h2>
-                <h6 className="text-muted">Laptop mania is one of the best leading laptop management service provider around the globe. Get the best out of it </h6>
+                <h2 className="maniaportal-heading">Mania Portal</h2>
+                <p className="text-muted container"><span className="info-starter">Laptop mania</span> is one of the best leading laptop management service provider around the globe. Here, you can store items, check the delivered and quantity of each items and even manage items. Get the best out of it </p>
+                <hr className="w-25 mx-auto mania-line" />
             </div>
 
             <div className="maniaportal-services row gx-0 text-center container mx-auto mt-5">

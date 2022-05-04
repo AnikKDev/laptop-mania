@@ -5,11 +5,33 @@
 
 .card:hover .maniaportal-icons-container {
     background-color: #DB2D2E;
+}
+
+.card:hover .maniaportal-icons {
     color: white;
+}
+
+.maniaportal-heading {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 2.5em;
+}
+
+.mania-line {
+    color: #DB2D2E;
+
+}
+
+.info-starter {
+    font-weight: bold;
+    font-size: 1.3em;
+    font-style: italic;
 }
 
 .maniaportal-icons {
     font-size: 2.5em;
+    color: rgb(161, 147, 147);
+    font-weight: lighter;
+    transition: 0.7s;
 }
 
 .maniaportal-icons-container {
@@ -17,5 +39,5 @@
     border-radius: 50%;
     width: 40%;
     height: 34%;
-    transition: 0.5s;
+    transition: 0.7s;
 }
