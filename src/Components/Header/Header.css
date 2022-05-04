@@ -1,3 +1,14 @@
 .navigation-container {
     min-height: 90px;
+
+}
+
+.nav-title {
+    font-family: 'Tapestry', cursive;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.nav-links {
+    font-size: 1.2em;
 }
