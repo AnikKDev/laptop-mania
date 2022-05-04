@@ -13,6 +13,7 @@ import SignUp from './Components/SignUp/SignUp';
 import RequireAuth from './Components/RequireAuth/RequireAuth';
 import { Toaster } from 'react-hot-toast';
 import MyItems from './Components/MyItems/MyItems';
+import Footer from './Components/Footer/Footer';
 
 function App() {
   return (
@@ -34,7 +35,7 @@ function App() {
         <Route path="/manage-inventories" element={<ManageInventories></ManageInventories>}></Route>
         <Route path="/add-item" element={<AddItem></AddItem>}></Route>
       </Routes>
-
+      <Footer></Footer>
       <Toaster />
     </div>
   );
