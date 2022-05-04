@@ -17,15 +17,16 @@ const Inventory = () => {
         getItems();
     }, []);
     return (
-        <div id='inventory' className="container">
-            <h1>Inventory: (total items: {inventoryItems.length})</h1>
-            <div className=''>
+        <div id='inventory' className="container my-5">
+            <h1 className='text-center inventory-title'>Inventory</h1>
+            <hr className="w-25 mx-auto" />
+            <div className='my-5'>
                 {
                     inventoryItems.map(inventoryItem => <InventoryItem key={inventoryItem._id} inventoryItem={inventoryItem}></InventoryItem>)
                 }
             </div>
             <Link to="/manage-inventories">
-                <button className="btn btn-warning">Manage Inventory</button>
+                <button className="btn btn-danger manage-inventory-btn d-block mx-auto">Manage Inventory</button>
             </Link>
 
         </div>

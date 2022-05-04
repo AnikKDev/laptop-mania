@@ -1,0 +1,12 @@
+.inventory-title {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.manage-inventory-btn {
+    font-weight: 500;
+}
+
+.manage-inventory-btn:hover {
+    background-color: #fff;
+    color: #DB2D2E;
+}

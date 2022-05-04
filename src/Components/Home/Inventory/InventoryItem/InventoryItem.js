@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './InventoryItem.css';
 const InventoryItem = ({ inventoryItem }) => {
     const { img, itemName, category, description, quantity, supplierName, _id, price } = inventoryItem;
     // console.log(inventoryItem);
@@ -21,7 +22,7 @@ const InventoryItem = ({ inventoryItem }) => {
                     <p className="card-text">{description}</p>
                     <p className="card-text"><small className="text-muted">Category: {category}</small></p>
                     <Link to={`/inventory/${_id}`}>
-                        <button className="btn btn-warning">Update</button>
+                        <button className="btn btn-danger update-btn">Update</button>
                     </Link>
                 </div>
             </div>

@@ -1,0 +1,8 @@
+.update-btn:hover {
+    background-color: white;
+    color: #DB2D2E;
+}
+
+.update-btn {
+    font-weight: 500;
+}

@@ -1,12 +1,16 @@
 .testimonial-container {
     background: rgba(0, 0, 0, 0.7) url('https://images.unsplash.com/photo-1619969101444-a10d1acc90be?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
-    min-height: 50vh;
-    height: 90vh;
+    min-height: 98vh;
+    /* height: 90vh; */
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
     background-blend-mode: darken;
+}
+
+.testimonial-title {
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 .card-container {
@@ -34,4 +38,9 @@
 .each-card:hover {
     border: 1px solid black !important;
     box-shadow: gray 0px 5px 17px 0px;
+}
+
+.people-name,
+.testimony-info {
+    font-family: 'Tapestry', cursive;
 }
