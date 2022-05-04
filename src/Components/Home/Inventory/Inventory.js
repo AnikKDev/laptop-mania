@@ -17,7 +17,7 @@ const Inventory = () => {
         getItems();
     }, []);
     return (
-        <div className="container">
+        <div id='inventory' className="container">
             <h1>Inventory: (total items: {inventoryItems.length})</h1>
             <div className=''>
                 {

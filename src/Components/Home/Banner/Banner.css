@@ -4,9 +4,38 @@
     background-position: center;
     background-size: cover;
     min-height: 90vh;
-    border: 2px solid red;
+    /* border: 2px solid red; */
 }
 
 .banner-info {
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
+}
+
+.banner-info p {
+    font-family: 'Tapestry', cursive;
+    letter-spacing: 3px;
+}
+
+.welcome-txt {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 200;
+    font-size: 2.5em;
+}
+
+.welcome-name {
+    font-family: 'Water Brush', cursive;
+    font-weight: bold;
+    font-size: 3.8em;
+    color: #ffffff;
+    letter-spacing: 10px;
+}
+
+.show-inventory-btn {
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.show-inventory-btn:hover {
+    background-color: #fff;
+    color: #DC3545;
 }
