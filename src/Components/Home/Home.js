@@ -4,6 +4,7 @@ import './Home.css';
 import HotDeals from './HotDeals/HotDeals';
 import Inventory from './Inventory/Inventory';
 import ManiaPortal from './ManiaPortal/ManiaPortal';
+import Testimonial from './Testimonial/Testimonial';
 const Home = () => {
     return (
         <div>
@@ -11,6 +12,7 @@ const Home = () => {
             <ManiaPortal></ManiaPortal>
             <HotDeals></HotDeals>
             <Inventory></Inventory>
+            <Testimonial></Testimonial>
         </div>
     );
 };
