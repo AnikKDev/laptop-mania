@@ -12,3 +12,8 @@
 .nav-links {
     font-size: 1.2em;
 }
+
+.nav-links a {
+    color: black;
+    margin: auto 5px;
+}
