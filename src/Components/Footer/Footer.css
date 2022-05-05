@@ -1,4 +1,14 @@
 .footer-container {
-    height: 100px;
-    background-color: red;
+    height: 150px;
+    background-color: #8b8b8b29;
+}
+
+.contact-icons {
+    font-size: 1.8em;
+}
+
+.highlighted-text:hover {
+    color: #DB2D2E;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
 }

@@ -7,6 +7,7 @@
     background-size: cover;
     background-attachment: fixed;
     background-blend-mode: darken;
+    margin: 150px 0;
 }
 
 .testimonial-title {
