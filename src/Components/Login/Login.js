@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useSignInWithGoogle, useSignInWithEmailAndPassword, useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
+import { FcGoogle } from 'react-icons/fc';
 import auth from '../../firebase.init';
 import './Login.css';
 import LoadingSpinner from '../Loadingspinner/LoadingSpinner';
@@ -105,8 +106,9 @@ const Login = () => {
 
 
     return (
-        <div>
-            <div className="w-50 mx-auto">
+        <div className="mt-5">
+            <div className="w-50 mx-auto mt-5 login-form p-5">
+                <h3 className="text-center mb-3 login-title">Log in</h3>
                 <Form onSubmit={handleLogin}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Email address</Form.Label>
@@ -119,12 +121,12 @@ const Login = () => {
                         <Form.Control onChange={handlePasswordChange} type="password" placeholder="Password" />
                     </Form.Group>
 
-                    <Button variant="primary" type="submit" className="w-100">
+                    <Button variant="danger" type="submit" className="w-100">
                         Login
                     </Button>
                 </Form>
-                <Button onClick={handleGoogleSignin} variant="primary" type="submit" className="w-100 my-2">
-                    Sign in with Google
+                <Button onClick={handleGoogleSignin} variant="" type="submit" className="w-100 my-2 google-btn mt-4">
+                    <FcGoogle className='g-icon'></FcGoogle> Sign in with Google
                 </Button>
                 <button onClick={handleResetPass} className="btn btn-link">Forgot password?</button>
                 <p>Don't have an account? <button onClick={() => navigate('/signup')} className="btn btn-link">Create an account</button></p>

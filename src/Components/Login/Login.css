@@ -1,0 +1,23 @@
+.login-form {
+    background-color: #b9b9b929;
+    border-radius: 7px;
+}
+
+.login-title {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.google-btn {
+    background-color: #efefef;
+    transition: 0.2s;
+}
+
+.google-btn:hover {
+    background-color: #bb4c57;
+    color: white;
+}
+
+.g-icon {
+    font-size: 1.2em;
+
+}

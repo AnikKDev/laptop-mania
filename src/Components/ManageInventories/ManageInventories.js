@@ -37,7 +37,7 @@ const ManageInventories = () => {
     };
     return (
         <div>
-            Manage Inventories:{allItems.length}
+            <h1 className='text-center my-5 inventory-title'>Manage Inventory</h1>
             <div className="container">
                 <Table striped bordered hover>
                     <thead>
@@ -68,7 +68,7 @@ const ManageInventories = () => {
                     </tbody>
                 </Table>
             </div>
-            <Link to="/add-item"><button className="btn btn-warning">Add New Item</button></Link>
+            <Link to="/add-item"><button className="btn btn-danger manage-inventory-btn d-block mx-auto mt-5">Add New Item</button></Link>
         </div>
     );
 };

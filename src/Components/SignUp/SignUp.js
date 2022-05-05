@@ -81,8 +81,9 @@ const SignUp = () => {
 
     };
     return (
-        <div>
-            <div className="w-50 mx-auto">
+        <div className='mt-5'>
+            <div className="w-50 mx-auto signup-form p-5">
+                <h3 className="text-center mb-3 login-title">Sign up</h3>
                 <Form noValidate validated={validated} onSubmit={handleSignup}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Email address</Form.Label>
@@ -101,12 +102,12 @@ const SignUp = () => {
                         {errors?.password && <p className="text-danger">{errors.password}</p>}
                     </Form.Group>
 
-                    <Button variant="primary" type="submit" className={errors?.password ? "w-100 disabled" : "w-100"}>
+                    <Button variant="danger" type="submit" className={errors?.password ? "w-100 disabled" : "w-100"}>
                         Sign Up
                     </Button>
 
                 </Form>
-                <p>Already have an account? <button onClick={() => navigate('/login')} className="btn btn-link">Login</button></p>
+                <p className="mt-4 mb-0">Already have an account? <button onClick={() => navigate('/login')} className="btn btn-link">Login</button></p>
             </div>
         </div>
     );
