@@ -38,9 +38,21 @@ const Login = () => {
             // navigate(from, { replace: true });
         }
     }, [emailUser, navigate, from]);
-    // if (emailError) {
-    //     console.log(emailError.message)
-    // };
+    useEffect(() => {
+        if (emailError) {
+            // toast.error(emailError.message);
+            switch (emailError?.code) {
+                case 'auth/too-many-requests':
+                    toast.error('Too many requests. Try again later.');
+                    break;
+                case 'auth/wrong-password':
+                    toast.error('Wrong password');
+                    break;
+                default:
+                    toast.error('Something went wrong. Try again.')
+            }
+        };
+    }, [emailError])
     /*     if (emailLoading) {
             <LoadingSpinner></LoadingSpinner>
         }; */
@@ -102,8 +114,9 @@ const Login = () => {
             const { data } = await axios.post('http://localhost:5000/token', { email });
             localStorage.setItem('accessToken', data.token);
             navigate(from, { replace: true });
+            e.target.reset();
         } else {
-            console.log('error')
+            return
         }
 
     };
