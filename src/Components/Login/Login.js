@@ -21,9 +21,7 @@ const Login = () => {
             navigate(from, { replace: true });
         };
     }, [navigate, googleUser, from]);
-    if (googleLoading) {
-        <LoadingSpinner></LoadingSpinner>
-    };
+
 
     // handle email sign in
     const [
@@ -51,6 +49,7 @@ const Login = () => {
                 default:
                     toast.error('Something went wrong. Try again.')
             }
+
         };
     }, [emailError])
     /*     if (emailLoading) {
@@ -106,18 +105,12 @@ const Login = () => {
     // handle login
     const handleLogin = async e => {
         e.preventDefault();
-
-        // console.log(email);
         await signInWithEmailAndPassword(userInfo.email, userInfo.password);
-        if (emailUser) {
-            const email = userInfo.email;
-            const { data } = await axios.post('http://localhost:5000/token', { email });
-            localStorage.setItem('accessToken', data.token);
-            navigate(from, { replace: true });
-            e.target.reset();
-        } else {
-            return
-        }
+        const email = userInfo.email;
+        console.log(email);
+        const { data } = await axios.post('http://localhost:5000/token', { email });
+        localStorage.setItem('accessToken', data.token);
+        navigate(from, { replace: true });
 
     };
     // handle google sign in
@@ -125,6 +118,10 @@ const Login = () => {
         signInWithGoogle();
     };
 
+
+    if (googleLoading || emailLoading) {
+        return <LoadingSpinner></LoadingSpinner>
+    };
 
     return (
         <div className="mt-5">
