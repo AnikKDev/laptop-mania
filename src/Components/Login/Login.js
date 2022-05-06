@@ -107,7 +107,6 @@ const Login = () => {
         e.preventDefault();
         await signInWithEmailAndPassword(userInfo.email, userInfo.password);
         const email = userInfo.email;
-        console.log(email);
         const { data } = await axios.post('http://localhost:5000/token', { email });
         localStorage.setItem('accessToken', data.token);
         navigate(from, { replace: true });
