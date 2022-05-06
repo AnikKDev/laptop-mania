@@ -38,9 +38,12 @@ const Login = () => {
             // navigate(from, { replace: true });
         }
     }, [emailUser, navigate, from]);
-    if (emailLoading) {
-        <LoadingSpinner></LoadingSpinner>
-    };
+    // if (emailError) {
+    //     console.log(emailError.message)
+    // };
+    /*     if (emailLoading) {
+            <LoadingSpinner></LoadingSpinner>
+        }; */
     // get user infos
     const [userInfo, setUserInfo] = useState({
         email: "",
@@ -91,13 +94,18 @@ const Login = () => {
     // handle login
     const handleLogin = async e => {
         e.preventDefault();
-        const email = userInfo.email;
+
         // console.log(email);
         await signInWithEmailAndPassword(userInfo.email, userInfo.password);
-        const { data } = await axios.post('http://localhost:5000/token', { email });
-        // console.log(data);
-        localStorage.setItem('accessToken', data.token);
-        navigate(from, { replace: true });
+        if (emailUser) {
+            const email = userInfo.email;
+            const { data } = await axios.post('http://localhost:5000/token', { email });
+            localStorage.setItem('accessToken', data.token);
+            navigate(from, { replace: true });
+        } else {
+            console.log('error')
+        }
+
     };
     // handle google sign in
     const handleGoogleSignin = () => {

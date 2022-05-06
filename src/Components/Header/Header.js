@@ -26,7 +26,9 @@ const Header = () => {
                         <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className="mx-3" to="/home">Home</NavLink>
                         <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className="mx-3" to="/about">About</NavLink>
                         <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className="mx-3" to="/blogs">Blogs</NavLink>
-                        <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className="mx-3" to="/my-items">My Items</NavLink>
+                        {user && <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className="mx-3" to="/my-items">My Items</NavLink>}
+                        {user && <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className="mx-3" to="/manage-inventories">Manage Inventory</NavLink>}
+                        {user && <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className="mx-3" to="/add-item">Add Items</NavLink>}
                         {user ? <button onClick={logout} className="btn btn-danger">Logout</button> : <Nav.Link as={Link} to="/login">Login</Nav.Link>}
                     </Nav>
                 </Navbar.Collapse>
