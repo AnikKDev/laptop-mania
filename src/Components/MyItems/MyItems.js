@@ -17,7 +17,7 @@ const MyItems = () => {
             const email = user?.email;
             // console.log(email);
             try {
-                const { data } = await axios.get(`http://localhost:5000/my-items?email=${email}`, {
+                const { data } = await axios.get(`https://intense-ridge-60059.herokuapp.com/my-items?email=${email}`, {
                     headers: {
                         authorization: `Bearer ${localStorage.getItem('accessToken')}`
                     }
@@ -40,7 +40,7 @@ const MyItems = () => {
         const proceed = window.confirm('Are you sure you want to delete?')
         if (proceed) {
             console.log(id);
-            const url = `http://localhost:5000/inventory/${id}`;
+            const url = `https://intense-ridge-60059.herokuapp.com/inventory/${id}`;
             fetch(url, {
                 method: "DELETE"
             })

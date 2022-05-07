@@ -21,7 +21,7 @@ const UpdateItem = () => {
             if (newQuantity < 0) {
                 return
             }
-            fetch(`http://localhost:5000/inventory/${id}`, {
+            fetch(`https://intense-ridge-60059.herokuapp.com/inventory/${id}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'
@@ -42,7 +42,7 @@ const UpdateItem = () => {
                 return
             }
             newQuantity = parseInt(parseInt(quantity) + parseInt(restock));
-            fetch(`http://localhost:5000/inventory/${id}`, {
+            fetch(`https://intense-ridge-60059.herokuapp.com/inventory/${id}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'
@@ -65,7 +65,7 @@ const UpdateItem = () => {
     useEffect(() => {
         async function getSingleItem() {
             try {
-                const { data } = await axios.get(`http://localhost:5000/inventory/${id}`);
+                const { data } = await axios.get(`https://intense-ridge-60059.herokuapp.com/inventory/${id}`);
                 setSingleItem(data);
             } catch (error) {
                 console.error(error);
@@ -93,15 +93,15 @@ const UpdateItem = () => {
                             <h5>Single Price: {price}</h5>
                             <h5>Quantity: {quantity}</h5>
                             <p className="text-muted">{description}</p>
-                            {quantity === 0 ? <button disabled className="btn btn-warning my-2">Sold</button> : <button onClick={() => handleQuantityUpdate(id, true)} className="btn btn-warning px-3">Delivered</button>}
+                            {quantity === 0 ? <button disabled className="btn btn-danger my-2">Sold</button> : <button onClick={() => handleQuantityUpdate(id, true)} className="btn btn-danger manage-inventory-btn px-3">Delivered</button>}
 
                         </div>
                         <div className="w-25 mt-4" >
                             <Form.Control required onChange={event => setRestock(event?.target?.value)} type="number" placeholder="Restock" />
-                            <button onClick={() => handleQuantityUpdate(id, false)} className="btn btn-warning my-2">Restock Item</button>
+                            <button onClick={() => handleQuantityUpdate(id, false)} className="btn btn-danger my-2 manage-inventory-btn">Restock Item</button>
                         </div>
                         <Link to="/manage-inventories">
-                            <button className="btn btn-warning">Manage Inventory</button>
+                            <button className="btn btn-danger manage-inventory-btn">Manage Inventory</button>
                         </Link>
                     </div>
                 </div>

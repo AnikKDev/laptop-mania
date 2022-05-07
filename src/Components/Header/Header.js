@@ -19,7 +19,7 @@ const Header = () => {
     return (
         <Navbar bg="" expand="lg" className="navigation-container">
             <Container>
-                <Navbar.Brand className="nav-title" href="#home">Laptop <span className="text-danger">Mania</span></Navbar.Brand>
+                <Navbar.Brand as={Link} className="nav-title" to="/">Laptop <span className="text-danger">Mania</span></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto nav-links">

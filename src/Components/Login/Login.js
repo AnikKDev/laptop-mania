@@ -107,7 +107,7 @@ const Login = () => {
         e.preventDefault();
         await signInWithEmailAndPassword(userInfo.email, userInfo.password);
         const email = userInfo.email;
-        const { data } = await axios.post('http://localhost:5000/token', { email });
+        const { data } = await axios.post('https://intense-ridge-60059.herokuapp.com/token', { email });
         localStorage.setItem('accessToken', data.token);
         navigate(from, { replace: true });
 

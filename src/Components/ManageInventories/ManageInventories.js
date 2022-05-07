@@ -8,7 +8,7 @@ const ManageInventories = () => {
     useEffect(() => {
         async function getAllItems() {
             try {
-                const { data } = await axios.get('http://localhost:5000/manage-inventories');
+                const { data } = await axios.get('https://intense-ridge-60059.herokuapp.com/manage-inventories');
                 setAllItems(data);
             } catch (error) {
                 console.error(error);
@@ -23,7 +23,7 @@ const ManageInventories = () => {
         const proceed = window.confirm('Are you sure you want to delete?')
         if (proceed) {
             console.log(id);
-            const url = `http://localhost:5000/inventory/${id}`;
+            const url = `https://intense-ridge-60059.herokuapp.com/inventory/${id}`;
             fetch(url, {
                 method: "DELETE"
             })

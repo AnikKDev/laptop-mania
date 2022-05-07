@@ -3,3 +3,7 @@
 a {
     text-decoration: none !important;
 }
+
+.set-min-height {
+    min-height: 80vh;
+}

@@ -8,7 +8,7 @@ const Inventory = () => {
     useEffect(() => {
         async function getItems() {
             try {
-                const { data } = await axios.get('http://localhost:5000/inventory');
+                const { data } = await axios.get('https://intense-ridge-60059.herokuapp.com/inventory');
                 setInventoryItems(data);
             } catch (error) {
                 console.error(error);

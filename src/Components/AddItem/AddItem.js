@@ -13,7 +13,7 @@ const AddItem = () => {
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
         console.log(data);
-        axios.post('http://localhost:5000/manage-inventories', data)
+        axios.post('https://intense-ridge-60059.herokuapp.com/manage-inventories', data)
             .then(function (response) {
                 const { data } = response;
                 if (data.insertedId) {
