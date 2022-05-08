@@ -24,7 +24,6 @@ const Header = () => {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto nav-links">
                         <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className="mx-3" to="/home">Home</NavLink>
-                        <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className="mx-3" to="/about">About</NavLink>
                         <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className="mx-3" to="/blogs">Blogs</NavLink>
                         {user && <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className="mx-3" to="/my-items">My Items</NavLink>}
                         {user && <NavLink style={({ isActive }) => isActive ? activeStyle : undefined} className="mx-3" to="/manage-inventories">Manage Inventory</NavLink>}
