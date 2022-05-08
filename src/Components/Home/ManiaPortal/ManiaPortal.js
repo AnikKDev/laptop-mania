@@ -23,8 +23,7 @@ const ManiaPortal = () => {
                             <Card.Title>Famous Brands</Card.Title>
 
                             <Card.Text>
-                                Some quick example text to build on the card title and make up the bulk of
-                                the card's content.
+                                Here you can take the advantage of dealing with famous brands. And we are here to ensure it to you.
                             </Card.Text>
                         </Card.Body>
                     </Card>
@@ -35,8 +34,7 @@ const ManiaPortal = () => {
                             <div className="maniaportal-icons-container d-flex justify-content-center align-items-center p-3 mx-auto my-3"><RiMessage3Line className="maniaportal-icons"></RiMessage3Line></div>
                             <Card.Title>Free Support</Card.Title>
                             <Card.Text>
-                                Some quick example text to build on the card title and make up the bulk of
-                                the card's content.
+                                Free support all time 24/7. Our agents are active all the time to help you out with anything.
                             </Card.Text>
                         </Card.Body>
                     </Card>
@@ -47,8 +45,7 @@ const ManiaPortal = () => {
                             <div className="maniaportal-icons-container d-flex justify-content-center align-items-center p-3 mx-auto my-3"><MdCable className="maniaportal-icons"></MdCable></div>
                             <Card.Title>Dealership</Card.Title>
                             <Card.Text>
-                                Some quick example text to build on the card title and make up the bulk of
-                                the card's content.
+                                By dealership you can get the chance to deal with the very renounce outcome possible.
                             </Card.Text>
                         </Card.Body>
                     </Card>
@@ -59,8 +56,7 @@ const ManiaPortal = () => {
                             <div className="maniaportal-icons-container d-flex justify-content-center align-items-center p-3 mx-auto my-3"><BsSave className="maniaportal-icons"></BsSave></div>
                             <Card.Title>Convenience</Card.Title>
                             <Card.Text>
-                                Some quick example text to build on the card title and make up the bulk of
-                                the card's content.
+                                It's easy and handy to use our support and take the advantage of it. And we look forward to it.
                             </Card.Text>
                         </Card.Body>
                     </Card>

@@ -4,13 +4,13 @@ import { FaFacebookSquare, FaInstagram, FaLinkedin } from 'react-icons/fa';
 // FaFacebookSquare,FaInstagram,FaLinkedin
 const Footer = () => {
     return (
-        <div className='footer-container d-flex justify-content-between align-items-center mt-5 px-5'>
-            <p className="mb-0">&copy; All rights reserved to Laptop Mania</p>
-            <p className="mb-0"><span className="highlighted-text">Privacy Policy</span> | <span className="highlighted-text">Terms And Conditions</span> | <span className="highlighted-text">Contact Us</span>
+        <div className='footer-container row px-4 gx-0 justify-content-center align-items-center'>
+            <p className="mb-0 col-md-4 text-center">&copy; All rights reserved to Laptop Mania</p>
+            <p className="mb-0 col-md-4 text-center"><span className="highlighted-text">Privacy Policy</span> | <span className="highlighted-text">Terms And Conditions</span> | <span className="highlighted-text">Contact Us</span>
             </p>
-            <div>
-                <h4>Connect with us</h4>
-                <div className="d-flex align-items-center justify-content-between px-4">
+            <div className="col-md-3">
+                <h4 className="text-center">Connect with us</h4>
+                <div className="d-flex align-items-center justify-content-around px-5 mx-3 mt-md-3">
                     <FaFacebookSquare className="contact-icons highlighted-text"></FaFacebookSquare>
                     <FaInstagram className="contact-icons highlighted-text"></FaInstagram>
                     <FaLinkedin className="contact-icons highlighted-text"> </FaLinkedin>

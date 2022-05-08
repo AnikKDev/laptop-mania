@@ -24,9 +24,10 @@ const AddItem = () => {
             .catch(function (error) {
                 console.log(error);
             });
+        data.target.reset()
     };
     return (
-        <div>
+        <div className="mb-5">
             <h2 className="text-center my-3 item-title">
                 Add items
             </h2>

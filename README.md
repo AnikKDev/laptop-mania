@@ -1,8 +1,8 @@
 # Laptop Mania
- [Laptop Mania](https://github.com/facebook/create-react-app).
+ [Laptop Mania](https://laptop-mania-client-side.web.app).
 
 
-### Live Link: 
+### Live Link: https://laptop-mania-client-side.web.app
 ## This project created with
 * google firebase
 * react router

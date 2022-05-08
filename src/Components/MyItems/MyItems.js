@@ -3,10 +3,12 @@ import React, { useEffect, useState } from 'react';
 import { signOut } from 'firebase/auth';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
+import LoadingSpinner from '../Loadingspinner/LoadingSpinner';
 import auth from '../../firebase.init';
 import './MyItems.css';
 import { Table } from 'react-bootstrap';
 const MyItems = () => {
+    const [isLoading, setIsLoading] = useState(false);
     const [user] = useAuthState(auth);
     const navigate = useNavigate();
     // console.log(user);
@@ -17,13 +19,15 @@ const MyItems = () => {
             const email = user?.email;
             // console.log(email);
             try {
+                setIsLoading(true)
                 const { data } = await axios.get(`https://intense-ridge-60059.herokuapp.com/my-items?email=${email}`, {
                     headers: {
                         authorization: `Bearer ${localStorage.getItem('accessToken')}`
                     }
                 });
 
-                setMyItems(data)
+                setMyItems(data);
+                setIsLoading(false);
             } catch (error) {
                 console.log(error);
                 if (error.response.status === 403 || error.response.status === 401) {
@@ -53,9 +57,12 @@ const MyItems = () => {
         }
     };
     return (
-        <div>
+        <div className="set-min-height">
             <h1 className="items-heading text-center my-5">My Items</h1>
             <div className="container">
+                {
+                    isLoading ? <LoadingSpinner></LoadingSpinner> : undefined
+                }
                 <Table striped bordered hover>
                     <thead>
                         <tr>
@@ -68,6 +75,7 @@ const MyItems = () => {
                         </tr>
                     </thead>
                     <tbody>
+
                         {
                             myItems.map(item => {
 

@@ -3,13 +3,17 @@ import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './ManageInventories.css';
+import LoadingSpinner from '../Loadingspinner/LoadingSpinner';
 const ManageInventories = () => {
     const [allItems, setAllItems] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
     useEffect(() => {
         async function getAllItems() {
             try {
+                setIsLoading(true);
                 const { data } = await axios.get('https://intense-ridge-60059.herokuapp.com/manage-inventories');
                 setAllItems(data);
+                setIsLoading(false);
             } catch (error) {
                 console.error(error);
             }
@@ -39,7 +43,11 @@ const ManageInventories = () => {
         <div>
             <h1 className='text-center my-5 inventory-title'>Manage Inventory</h1>
             <div className="container">
+                {
+                    isLoading ? <LoadingSpinner></LoadingSpinner> : undefined
+                }
                 <Table striped bordered hover>
+
                     <thead>
                         <tr>
 
@@ -51,6 +59,7 @@ const ManageInventories = () => {
                         </tr>
                     </thead>
                     <tbody>
+
                         {
                             allItems.map(item => {
 
@@ -68,7 +77,7 @@ const ManageInventories = () => {
                     </tbody>
                 </Table>
             </div>
-            <Link to="/add-item"><button className="btn btn-danger manage-inventory-btn d-block mx-auto mt-5">Add New Item</button></Link>
+            <Link to="/add-item"><button className="btn btn-danger manage-inventory-btn d-block mx-auto my-5">Add New Item</button></Link>
         </div>
     );
 };

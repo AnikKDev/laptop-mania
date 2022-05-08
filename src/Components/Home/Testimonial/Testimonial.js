@@ -19,8 +19,7 @@ const Testimonial = () => {
                             <Card.Title className="people-name">Mickael Bean</Card.Title>
                             <Card.Subtitle className="mb-2 text-muted">Consumer</Card.Subtitle>
                             <Card.Text className="testimony-info">
-                                Some quick example text to build on the card title and make up the bulk of
-                                the card's content.
+                                I was in search for a very reliable inventory management service provider. And here I think I found it. The Laptop Mania.
                             </Card.Text>
 
                         </Card.Body>
@@ -36,8 +35,7 @@ const Testimonial = () => {
                             <Card.Title className="people-name">Mel Gibson</Card.Title>
                             <Card.Subtitle className="mb-2 text-muted">Item Dealer</Card.Subtitle>
                             <Card.Text className="testimony-info">
-                                Some quick example text to build on the card title and make up the bulk of
-                                the card's content.
+                                It's very convininet to use Laptop Mania's support. It's an amazing experience to deal with these guys.
                             </Card.Text>
 
                         </Card.Body>
@@ -53,8 +51,7 @@ const Testimonial = () => {
                             <Card.Title className="people-name">Johnny D'Caprio</Card.Title>
                             <Card.Subtitle className="mb-2 text-muted">Item Dealer</Card.Subtitle>
                             <Card.Text className="testimony-info">
-                                Some quick example text to build on the card title and make up the bulk of
-                                the card's content.
+                                Never disappoint. Alaways great every way possible with very good outcome. Happy to be dealer with Laptop Mania.
                             </Card.Text>
 
                         </Card.Body>
